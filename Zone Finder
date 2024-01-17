@@ -1,0 +1,28 @@
+#ZONE finder 
+def find_zone(state_name):
+    north_states = ['Jammu and Kashmir', 'Himachal Pradesh', 'Punjab', 'Haryana', 'Uttarakhand', 'Delhi', 'Chandigarh']
+    south_states = ['Andhra Pradesh', 'Telangana', 'Karnataka', 'Tamil Nadu', 'Kerala', 'Puducherry', 'Lakshadweep']
+    east_states = ['West Bengal', 'Odisha', 'Jharkhand', 'Bihar', 'Assam', 'Manipur', 'Mizoram', 'Meghalaya', 'Tripura', 'Arunachal Pradesh', 'Nagaland', 'Sikkim']
+    west_states = ['Maharashtra', 'Gujarat', 'Rajasthan', 'Daman and Diu', 'Dadra and Nagar Haveli']
+
+    state_name = state_name.strip()
+
+    if state_name in north_states:
+        return 'North Zone'
+    elif state_name in south_states:
+        return 'South Zone'
+    elif state_name in east_states:
+        return 'East Zone'
+    elif state_name in west_states:
+        return 'West Zone'
+    else:
+        return 'Unknown Zone'
+
+# List of state names
+state_names = States
+# Create a new list with corresponding zones
+zone_names = [find_zone(state) for state in state_names]
+
+# Display the result
+for state, zone in zip(state_names, zone_names):
+    print(f"The state {state} belongs to the {zone}.")
